@@ -1,0 +1,9 @@
+# This project is a shell script and relies on the following
+# command-line tools. Please ensure they are installed on your system
+# using your distribution's package manager (e.g., apt, pacman, dnf, brew).
+#
+# See the README.md for installation instructions.
+
+ffmpeg
+rofi
+zenity
