@@ -1,38 +1,30 @@
 # Video to WebP Converter
 
-## About The Project
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Dependencies](https://img.shields.io/badge/dependencies-ffmpeg%20|%20rofi%20|%20zenity-blue)](https://shields.io/)
 
-<!-- It's highly recommended to add a screenshot or a GIF of the script in action! -->
-<!-- !Project Screenshot -->
+A simple yet powerful shell script to convert videos into high-quality animated WebP files using a friendly graphical interface.
 
-This project provides a powerful shell script that uses `ffmpeg`, `rofi`, and `zenity` to create a graphical user interface for converting video files into animated WebP images.
+<!-- TODO: Add a GIF of the script in action! -->
+<!-- !Script Demo -->
 
-It is designed for Linux desktop users who want a quick and interactive way to create high-quality WebP animations without needing to remember or type complex `ffmpeg` commands in the terminal. The script guides you through every step, from file selection to customizing the output.
+This script is for Linux desktop users who want a fast, interactive way to create WebP animations without typing complex `ffmpeg` commands. It guides you through every step, from picking a file to customizing the final output.
 
 ## Features
 
--   **User-Friendly GUI**: Uses Zenity for file selection and Rofi for option menus, making it easy to use.
--   **Batch Processing**: Convert a single video or all videos within the same directory in one go.
--   **Highly Customizable Output**:
-    -   Adjust **frame rate (FPS)**.
-    -   Set **quality** level (0-100).
-    -   Define **resolution/scale** (choose from presets or enter a custom size).
-    -   Select `libwebp` **compression presets** (e.g., `photo`, `drawing`, `text`) for optimal file size.
-    -   Toggle **animation looping**.
--   **Flexible File Naming**: Choose from several predefined naming structures for output files, which is especially useful for batch conversions.
--   **Smart Directory Handling**: Select an output directory from a list of suggestions or type a new path. The script can create the directory if it doesn't exist.
--   **Status Notifications**: Get real-time feedback on the conversion process and a final summary of successful and failed operations.
+-   **Graphical & Interactive**: Uses Zenity for file browsing and Rofi for menus. No command-line flags to memorize.
+-   **Single or Batch Mode**: Convert one video or all videos in a folder at once.
+-   **Full Conversion Control**: Easily set the FPS, quality, resolution, compression preset, and looping.
+-   **Smart & Flexible**: Offers suggestions for output directories and filenames, but lets you choose your own.
+-   **Instant Feedback**: See the conversion progress and get a summary when it's done.
 
-## Requirements
+## Getting Started
 
-This script depends on three command-line tools. You must install them using your system's package manager.
+### 1. Prerequisites
 
--   **`ffmpeg`**: The core engine for video conversion.
--   **`rofi`**: For creating interactive selection menus.
--   **`zenity`**: For the graphical file selection dialog.
+This script requires `ffmpeg`, `rofi`, and `zenity`. You can install them using your system's package manager.
 
-### Installation on Debian/Ubuntu
-
+**On Debian/Ubuntu:**
 ```bash
 sudo apt update
 sudo apt install ffmpeg rofi zenity
@@ -91,22 +83,8 @@ The animated WebP files you create with this script are perfect for use as dynam
 
 `swww` is a lightweight and efficient wallpaper daemon for Wayland compositors like Hyprland or Sway.
 
-### One-Time Setup
-
-To set your newly created animation as a wallpaper, simply run:
-
 ```bash
 swww img /path/to/your/output_file.webp
-```
-
-### Persistent Setup (Autostart)
-
-To make your wallpaper persist across reboots, add the `swww img` command to your Wayland compositor's startup configuration file (e.g., `~/.config/hypr/hyprland.conf` or `~/.config/sway/config`).
-
-```sh
-# Example for Hyprland/Sway startup config
-exec-once = swww init
-exec-once = swww img /path/to/your/output_file.webp
 ```
 
 ## License
