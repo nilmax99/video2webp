@@ -1,8 +1,13 @@
 # Video to WebP Converter
 
-A powerful shell script that uses `ffmpeg`, `rofi`, and `zenity` to provide a graphical user interface for converting video files into animated WebP images.
+## About The Project
 
-It is designed for Linux desktop users who want a quick and interactive way to create WebP animations without manually typing complex `ffmpeg` commands.
+<!-- It's highly recommended to add a screenshot or a GIF of the script in action! -->
+<!-- !Project Screenshot -->
+
+This project provides a powerful shell script that uses `ffmpeg`, `rofi`, and `zenity` to create a graphical user interface for converting video files into animated WebP images.
+
+It is designed for Linux desktop users who want a quick and interactive way to create high-quality WebP animations without needing to remember or type complex `ffmpeg` commands in the terminal. The script guides you through every step, from file selection to customizing the output.
 
 ## Features
 
@@ -80,5 +85,29 @@ The script will guide you through the following steps:
 6.  **Conversion**: The script will start converting the files. You can see the progress in your terminal.
 7.  **Summary**: A final Rofi notification will appear, summarizing how many files were converted successfully and how many failed.
 
+## Bonus: Animated Wallpaper with `swww`
+
+The animated WebP files you create with this script are perfect for use as dynamic wallpapers on Wayland-based desktops using the swww wallpaper daemon.
+
+`swww` is a lightweight and efficient wallpaper daemon for Wayland compositors like Hyprland or Sway.
+
+### One-Time Setup
+
+To set your newly created animation as a wallpaper, simply run:
+
+```bash
+swww img /path/to/your/output_file.webp
+```
+
+### Persistent Setup (Autostart)
+
+To make your wallpaper persist across reboots, add the `swww img` command to your Wayland compositor's startup configuration file (e.g., `~/.config/hypr/hyprland.conf` or `~/.config/sway/config`).
+
+```sh
+# Example for Hyprland/Sway startup config
+exec-once = swww init
+exec-once = swww img /path/to/your/output_file.webp
+```
+
 ## License
-This project is licensed under the MIT License. See the LICENSE file for details.
+This project is licensed under the MIT License. See the `LICENSE` file for details.
